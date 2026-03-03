@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+myenv/
+env/
+venv/
+ENV/
+
+# Model Files and Data
+model_weights.npz
+vocab.json
+data/*.txt
+!data/sample.txt
+!data/test.txt
+
+# OS
+.DS_Store
+Thumbs.db
