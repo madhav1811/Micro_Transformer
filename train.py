@@ -88,3 +88,4 @@ print("\nFinal Generation:")
 prompt = "Once upon a time"
 result = generate(model, tokenizer, prompt, max_new_tokens=100, block_size=block_size)
 print(result)
+#print(Hello)
