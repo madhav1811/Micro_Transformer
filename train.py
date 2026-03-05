@@ -7,11 +7,11 @@ from src.optimizer import AdamW
 from src.utils import cross_entropy_loss, generate
 
 # Hyperparameters (Story Mode)
-batch_size = 12
-block_size = 64
+batch_size = 16
+block_size = 128
 n_embd = 192
 n_heads = 6
-n_layers = 6
+n_layers = 4
 max_lr = 1e-3
 min_lr = 1e-4
 max_iters = 1000
@@ -86,6 +86,6 @@ tokenizer.save_vocab('vocab.json')
 # 5. Final Generation
 print("\nFinal Generation:")
 prompt = "Once upon a time"
-result = generate(model, tokenizer, prompt, max_new_tokens=100, block_size=block_size)
+result = generate(model, tokenizer, prompt, max_new_tokens=500, block_size=block_size)
 print(result)
 #print(Hello)

@@ -27,10 +27,10 @@ vocab_size = tokenizer.vocab_size
 data = np.array(tokenizer.encode(text)) if text else None
 
 # 2. Hyperparameters (MUST match train.py)
-block_size = 64
+block_size = 128
 n_embd = 192
 n_heads = 6
-n_layers = 6
+n_layers = 4
 
 # 3. Initialize Model
 model = MicroGPT(vocab_size, n_embd, n_heads, n_layers, block_size)
@@ -60,7 +60,7 @@ prompts = ["Once upon a time", "A brave robot", "In the forest"]
 for prompt in prompts:
     print(f"\nPrompt: '{prompt}'")
     try:
-        result = generate(model, tokenizer, prompt, max_new_tokens=300, block_size=block_size, temperature=T)
+        result = generate(model, tokenizer, prompt, max_new_tokens=500, block_size=block_size, temperature=T)
         print(f"Story: {result}")
     except Exception as e:
         print(f"Error generating story: {e}")
