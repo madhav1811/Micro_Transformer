@@ -6,15 +6,15 @@ from src.model import MicroGPT
 from src.optimizer import AdamW
 from src.utils import cross_entropy_loss, generate
 
-# Hyperparameters (Story Mode)
-batch_size = 16
-block_size = 128
-n_embd = 192
-n_heads = 6
-n_layers = 4
-max_lr = 1e-3
-min_lr = 1e-4
-max_iters = 1000
+# Hyperparameters (Accuracy Focus)
+batch_size = 32
+block_size = 256
+n_embd = 384
+n_heads = 12
+n_layers = 8
+max_lr = 5e-4
+min_lr = 1e-5
+max_iters = 10000
 eval_interval = 100
 print_interval = 10
 
@@ -86,6 +86,6 @@ tokenizer.save_vocab('vocab.json')
 # 5. Final Generation
 print("\nFinal Generation:")
 prompt = "Once upon a time"
-result = generate(model, tokenizer, prompt, max_new_tokens=500, block_size=block_size)
+result = generate(model, tokenizer, prompt, max_new_tokens=1000, block_size=block_size)
 print(result)
 #print(Hello)
